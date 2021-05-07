@@ -201,7 +201,7 @@ namespace ImportExport
         }
 
         static private A3DEModellerType GetModellerType( string fn ) {
-            if( fn.EndsWith("IGS", StringComparison.OrdinalIgnoreCase ) || fn.EndsWith("IGS", StringComparison.OrdinalIgnoreCase ) ) {
+            if( fn.EndsWith("IGS", StringComparison.OrdinalIgnoreCase ) || fn.EndsWith("IGES", StringComparison.OrdinalIgnoreCase ) ) {
                 return A3DEModellerType.kA3DModellerIges;
             } else if( fn.EndsWith("STP", StringComparison.OrdinalIgnoreCase ) || fn.EndsWith("STEP", StringComparison.OrdinalIgnoreCase ) || fn.EndsWith("STPZ", StringComparison.OrdinalIgnoreCase ) ) {
                 return A3DEModellerType.kA3DModellerStep;
