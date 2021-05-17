@@ -193,13 +193,13 @@ namespace TS3D.Exchange
                 throw new InitializationException("Unable to retrieve DLL version information." );
             }
 
-            if( major_version != API.DLL_MAJORVERSION || minor_version != API.DLL_MINORVERSION ) {
+            if( major_version != VERSION.DLL_MAJORVERSION || minor_version != VERSION.DLL_MINORVERSION ) {
                 var sb = new StringBuilder();
                 sb.AppendLine("The DLL version does not match the C# version." );
                 sb.AppendLine(
                     "DLL: (" + major_version + ", " + minor_version + ")"
                     + " != " + 
-                    "C# (" + API.DLL_MAJORVERSION + ", " + API.DLL_MINORVERSION + ")");
+                    "C# (" + VERSION.DLL_MAJORVERSION + ", " + VERSION.DLL_MINORVERSION + ")");
                 throw new InitializationException( sb.ToString() );
             }
 
