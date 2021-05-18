@@ -3,10 +3,14 @@ using System.Runtime.InteropServices;
 
 namespace TS3D.Exchange.Direct
 {
+    public class VERSION
+    {
+        public static int DLL_MAJORVERSION = 13;
+        public static int DLL_MINORVERSION = 2;
+    }
+
     public class API
     {
-    public static int DLL_MAJORVERSION = 13;
-    public static int DLL_MINORVERSION = 2;
     public static ushort DEFAULT_LAYER = ushort.MaxValue;
     public static byte DEFAULT_TRANSPARENCY = 255;
     public static double DEFAULT_LINE_WIDTH = 0.1;
