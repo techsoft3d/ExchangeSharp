@@ -2184,4 +2184,13 @@ namespace TS3D.Exchange.Direct
         kA3DFRMEnumValue_ReferenceMaster_Geometries = 3
 }
 
+    public enum A3DETransformationBehavior
+    {
+        kA3DTransformationIdentity        = 0x00, /*!< Identity transformation. */
+        kA3DTransformationTranslate       = 0x01, /*!< Translate transformation */
+        kA3DTransformationRotate          = 0x02, /*!< Rotate transformation. */
+        kA3DTransformationMirror          = 0x04, /*!< Mirror transformation. */
+        kA3DTransformationScale	          = 0x08, /*!< Scale transformation. */
+        kA3DTransformationNonUniformScale = 0x10, /*!< Non-uniform scale transformation. */
+    }
 }
