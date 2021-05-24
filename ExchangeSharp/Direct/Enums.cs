@@ -2193,4 +2193,32 @@ namespace TS3D.Exchange.Direct
         kA3DTransformationScale	          = 0x08, /*!< Scale transformation. */
         kA3DTransformationNonUniformScale = 0x10, /*!< Non-uniform scale transformation. */
     }
+
+    public enum A3DEMarkupFlags
+    {
+        kA3DMarkupIsMatrix       = 0x08000000, /*!< Bit to denote whether the current entity is a matrix. */
+        kA3DMarkupIsExtraData    = 0x04000000, /*!< Bit to denote whether the current entity is extra data (neither matrix nor polyline). */
+        kA3DMarkupIntegerMask    = 0xFFFFF, /*!< Integer mask to retrieve sizes. */
+        kA3DMarkupExtraDataType  = 0x3E00000, /*!< Mask to get the integer type of the entity. */
+    }
+
+    public enum A3DMarkupExtraDataTypes
+    {
+        kA3DMarkupPatternMask     = 0x000000, /*!< Mask to encode pattern type entity. */
+        kA3DMarkupPictureMask     = 0x200000, /*!< Mask to encode picture type entity. */
+        kA3DMarkupTrianglesMask   = 0x400000, /*!< Mask to encode triangles type entity. */
+        kA3DMarkupQuadsMask       = 0x600000, /*!< Mask to encode quads type entity. */
+        kA3DMarkupFaceViewMask    = 0xC00000, /*!< Mask to encode face view mode. */
+        kA3DMarkupFrameDrawMask   = 0xE00000, /*!< Mask to encode frame draw mode. */
+        kA3DMarkupFixedSizeMask   = 0x1000000, /*!< Mask to encode fixed size mode. */
+        kA3DMarkupSymbolMask      = 0x1200000, /*!< Mask to encode symbol type entity. */
+        kA3DMarkupCylinderMask    = 0x1400000, /*!< Mask to encode cylinder type entity. */
+        kA3DMarkupColorMask       = 0x1600000, /*!< Mask to encode color type entity. */
+        kA3DMarkupLineStippleMask = 0x1800000, /*!< Mask to encode line stipple type entity. */
+        kA3DMarkupFontMask        = 0x1A00000, /*!< Mask to encode font type entity. */
+        kA3DMarkupTextMask        = 0x1C00000, /*!< Mask to encode text type entity. */
+        kA3DMarkupPointsMask      = 0x1E00000, /*!< Mask to encode point type entities. */
+        kA3DMarkupPolygonMask     = 0x2000000, /*!< Mask to encode polygonal type entity. */
+        kA3DMarkupLineWidthMask   = 0x2200000, /*!< Mask to encode line width type entity. */
+    }
 }
