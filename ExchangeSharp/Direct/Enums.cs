@@ -2221,4 +2221,21 @@ namespace TS3D.Exchange.Direct
         kA3DMarkupPolygonMask     = 0x2000000, /*!< Mask to encode polygonal type entity. */
         kA3DMarkupLineWidthMask   = 0x2200000, /*!< Mask to encode line width type entity. */
     }
+
+    // from A3DSDKTopology.h -- the values are defined in comments in the header
+    // file, they are not formal #defines or enum values.
+    //------
+    //The \ref m_pucOrientationWithShell member is a bit array
+    //that denotes the orientation of the surface normal regarding the shell normal.
+    //If the shell is closed and otherwise arbitrary, the shell normal points outside the material.
+    //\note Possible values for the \ref m_pucOrientationWithShell[i] are as follows:
+    //\li 0: Opposite orientations
+    //\li 1: Same orientation for face and shell
+    //\li 2: Unknown orientation
+    public enum A3DEFaceOrientation
+    {
+        kA3DFaceOrientationOpposite = 0,
+        kA3DFaceOrientationSame     = 1,
+        kA3DFaceOrientationUnknown  = 2
+    }
 }
