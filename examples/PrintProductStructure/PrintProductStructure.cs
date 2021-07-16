@@ -13,7 +13,7 @@ namespace DriverApp
             var d = new A3DRootBaseWrapper( ntt );
             var t = A3DEEntityType.kA3DTypeUnknown;
             API.A3DEntityGetType( ntt, ref t );
-            var type = Marshal.PtrToStringAuto(  API.A3DMiscGetEntityTypeMsg( t ) );
+            var type = Marshal.PtrToStringUTF8(  API.A3DMiscGetEntityTypeMsg( t ) );
             return d.m_pcName + " [" + type + "]";
         }
 
