@@ -119,6 +119,25 @@ namespace TS3D.Exchange
             return "unknown_platform";
         }
 
+        static internal IntPtr LoadLibrary(string path) {
+            if(RuntimeInformation.IsOSPlatform(OSPlatform.Linux)) {
+                var handle = dlopen(path, RTLD_LAZY | RTLD_GLOBAL);
+                if(handle.Equals(IntPtr.Zero)) {
+                    throw new DllNotFoundException("Unable to find DLL: " + path);
+                }
+                return handle;
+            }
+            
+            return NativeLibrary.Load( path );
+        }
+
+#region dlopen
+        private const int RTLD_LAZY = 0x00001; //Only resolve symbols as needed
+        private const int RTLD_GLOBAL = 0x00100; //Make symbols available to libraries loaded later
+        [DllImport("dl")]
+        private static extern IntPtr dlopen (string file, int mode);
+#endregion
+
         static public bool Load( string exchange_bin_folder ) {
             if( LibraryHandle != IntPtr.Zero ) {
                 return false;
@@ -128,19 +147,19 @@ namespace TS3D.Exchange
                 exchange_bin_folder = "";
             }
             
-        	string library_name = GetLibraryName();
+            string library_name = GetLibraryName();
             string [] extra_libraries = null;
             if( RuntimeInformation.IsOSPlatform(OSPlatform.Linux)) {
                 extra_libraries = ExtraLibraryNames;
             }
             try {
-                LibraryHandle = NativeLibrary.Load( Path.Combine( exchange_bin_folder, library_name ) );
                 if( null != extra_libraries ) {
                     ExtraLibraryHandles = new List<IntPtr>();
                     foreach( var extra_library in extra_libraries ) {
-                        ExtraLibraryHandles.Add( NativeLibrary.Load( Path.Combine( exchange_bin_folder, extra_library ) ) );
+                        ExtraLibraryHandles.Add( LoadLibrary( Path.Combine( exchange_bin_folder, extra_library ) ) );
                     }
                 }
+                LibraryHandle = LoadLibrary( Path.Combine( exchange_bin_folder, library_name ) );
             } catch( DllNotFoundException ) {
                 return false;
             }
