@@ -156,7 +156,10 @@ namespace TS3D.Exchange
                 if( null != extra_libraries ) {
                     ExtraLibraryHandles = new List<IntPtr>();
                     foreach( var extra_library in extra_libraries ) {
-                        ExtraLibraryHandles.Add( LoadLibrary( Path.Combine( exchange_bin_folder, extra_library ) ) );
+                        var extra_lib_path = Path.Combine(exchange_bin_folder, extra_library);
+                        if (File.Exists(extra_lib_path)) {
+                            ExtraLibraryHandles.Add(LoadLibrary(extra_lib_path));
+                        }
                     }
                 }
                 LibraryHandle = LoadLibrary( Path.Combine( exchange_bin_folder, library_name ) );
