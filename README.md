@@ -6,6 +6,8 @@ It can be built and used on the following platforms:
  - Ubuntu Linux
  - macOS
 
+A video introducing ExchangeSharp can be found here: https://www.youtube.com/watch?v=C6XPWZAu1EE
+
 ## Expectations and Disclaimer
 This is an unsupported implementation. It is being developed as experimental code. 
 
