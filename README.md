@@ -6,7 +6,9 @@ It can be built and used on the following platforms:
  - Ubuntu Linux
  - macOS
 
-A video introducing ExchangeSharp can be found here: https://www.youtube.com/watch?v=C6XPWZAu1EE
+A video introducing ExchangeSharp can be found here:
+
+[![IMAGE ALT TEXT](http://img.youtube.com/vi/C6XPWZAu1EE/0.jpg)](http://www.youtube.com/watch?v=C6XPWZAu1EE "ExchangeSharp: HOOPS Exchange and C# With No Performance Loss") 
 
 ## Expectations and Disclaimer
 This is an unsupported implementation. It is being developed as experimental code. 
