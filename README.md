@@ -74,7 +74,8 @@ if( A3DStatus.A3D_SUCCESS == API.A3DAsmModelFileGet( model_file, ref d ) ) {
 | Libraray.cs                | Hand-written library management code     |     98%    |
 | Structs.cs                 | Declarations of all struct data types    |     99%    |
 | Enums.cs                   | Declarations of all enum data types      |     99%    |
-| API.Initialize             | C# Implementation of A3D_INITIALIZE_DATA |     99%    |
+| Contants.cs                | Declarations of all #define constancts   |     98%    |
+| API.Initialize             | C# Implementation of A3D_INITIALIZE_DATA |     90%    |
 | API.A3D*Get                | Get functions for structs                |     99%    |
 | API.A3D*Create             | Create functions for structs             |     99%    |
 | API.A3D*Edit               | Edit functions for structs               |     80%    |
@@ -84,7 +85,7 @@ if( A3DStatus.A3D_SUCCESS == API.A3DAsmModelFileGet( model_file, ref d ) ) {
 
 ## Prerequisites
 In order to build and use ExchangeSharp, the following software components are required:
-* [HOOPS Exchange 2020 SP2](https://developer.techsoft3d.com/hoops/exchange/downloads/latest/) (or binary compatible version)
+* [HOOPS Exchange](https://developer.techsoft3d.com/hoops/exchange/downloads/latest/) (or binary compatible version)
 	* Be sure you have Exchange installed and licensed correctly. 
 	* Unpack the archive.
  	* Place `hoops_license.h` _and_ `hoops_license.cs` in the `include` folder.
@@ -94,7 +95,7 @@ In order to build and use ExchangeSharp, the following software components are r
 
 ## Building ExchangeSharp.dll
 1. Clone the ExchangeSharp repository.
-	* `git clone https://github.com/bflubacherts3d/ExchangeSharp.git`
+	* `git clone https://github.com/techsoft3d/ExchangeSharp.git`
 1. Build ExchangeSharp
 	* `dotnet build <version>`
 1. `ExchangeSharp.dll` can be found in the `<version>/src/bin/Debug/netcoreapp3.1` folder.
