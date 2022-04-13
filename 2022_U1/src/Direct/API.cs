@@ -1637,7 +1637,7 @@ namespace TS3D.Exchange.Direct
         public static PFA3DProjectPointCloudManagerCreateFromModelFile A3DProjectPointCloudManagerCreateFromModelFile = null;
         public delegate A3DStatus PFA3DProjectPointCloudManagerDelete(IntPtr pManager);
         public static PFA3DProjectPointCloudManagerDelete A3DProjectPointCloudManagerDelete = null;
-        public delegate A3DStatus PFA3DProjectPointCloud2(IntPtr pManager, uint uPointCloudSize, ref A3DVector3dData pPointCloudToProject, bool bUseExactComputation, uint uNbThreads, double dInsidePointEdgeTolerance, IntPtr ppProjectedPointCloud);
+        public delegate A3DStatus PFA3DProjectPointCloud2(IntPtr pManager, uint uPointCloudSize, IntPtr pPointCloudToProject, bool bUseExactComputation, uint uNbThreads, double dInsidePointEdgeTolerance, IntPtr ppProjectedPointCloud);
         public static PFA3DProjectPointCloud2 A3DProjectPointCloud2 = null;
         public delegate A3DStatus PFA3DComputePlanarSectionOnRepresentationItem(IntPtr pRiBrepModel, ref A3DPlanarSectionData psSectionParametersData, out IntPtr ppRISectionResults);
         public static PFA3DComputePlanarSectionOnRepresentationItem A3DComputePlanarSectionOnRepresentationItem = null;
