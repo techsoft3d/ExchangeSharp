@@ -23,6 +23,8 @@ Expect an API that is very similar to the HOOPS Exchange native C API.
 
 If you are going to use ExchangeSharp, you will need a basic understanding of the HOOPS Exchange C API.
 
+HOOPS Exchange 2023 SP2 U1 now has official support for C#. Therefore, this repo will no longer receive regularly updates.
+
 ## Description
 This is a direct C# language binding for HOOPS Exchange implemented in the namespace `TS3D.Exchange.Direct`. 
 
